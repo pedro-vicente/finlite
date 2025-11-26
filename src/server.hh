@@ -1,0 +1,25 @@
+#ifndef SERVER_HH
+#define SERVER_HH
+
+#include "lite.hh"
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// http_server
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class http_server 
+{
+private:
+  int server_fd;
+  int port;
+  finmart_db& db;
+
+public:
+  http_server(int p, finmart_db& database);
+  ~http_server();
+  bool start();
+  void run();
+};
+
+
+#endif
